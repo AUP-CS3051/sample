@@ -12,7 +12,7 @@
       <ul>
         <% for (var i = 0; i < data.length; i++) { %>
         <li>
-          <%= data[i].get('courses') %>
+          <%= data[i].get('courses')[0].name %>
         </li>
         <% } %>
       </ul>
