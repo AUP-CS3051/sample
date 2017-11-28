@@ -1,0 +1,30 @@
+<!DOCTYPE html> <html> <head> <% include partials/head %> </head> <body
+    class="container"> <header> <% include partials/header %> </header> <main>
+    <div class="jumbotron"> <form action="/users/create" method="post">
+        <label for="login">Enter login: </label>
+        <input id="login" type="text" name="login"
+          value="<% if (typeof user !== 'undefined') {%>
+          <%=user.login%><% } else {%>login<% } %>">
+      <label for="password">Enter password:
+      </label> <input
+                   id="password"
+                   type="password"
+                   name="password"
+                    value="<% if (typeof user !== 'undefined') {%><%=user.password%><% } %>">
+      <input type="submit" value="OK">
+      </form>
+
+      <% if (typeof errors !== 'undefined') { %>
+        <ul>
+          <% for (i = 0; i < errors.length; i++) { %>
+            <li> <%= errors[i].msg %> </li>
+          <% } %>
+        </ul>
+      <% } %>
+
+    </div>
+  </main>
+  <footer>
+    <% include partials/footer %>
+  </footer>
+  </body></html>

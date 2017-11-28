@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>
+  </head>
+  <body class="container">
+    <header>
+      <% include partials/header %>
+    </header>
+    <main>
+    <div class="jumbotron">
+      <ul>
+        <% for (var i = 0; i < data.length; i++) { %>
+        <li>
+          <%= data[i].get('courses') %>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    </main>
+    <footer>
+      <% include partials/footer %>
+    </footer>
+  </body></html>
